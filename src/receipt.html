@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt - Shopping-cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-primary ">
+          <div class="container justify-content-center">
+            <div>
+              <a href="index.html""><img src=" /img/ADEEG LOGO.avif" alt="" style="width: 200px;"></a>
+            </div>
+          </div>
+        </nav>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-dark">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-cart"></i> Cart <span id="cartItemCount" class="badge bg-primary">0</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown"
+                style="width: 400px; font-family: sans-serif;">
+                <li>
+                  <h6 class="dropdown-header">Adeeg.com </h6>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <ul id="cartDropdownItems" class="list-unstyled mb-0"
+                    style="max-height: 200px; font-family: sans-serif; overflow-y: auto;">
+                  </ul>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <p class="dropdown-item-text fw-bold">Total: $<span id="cartDropdownTotal">0.00</span></p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Bill Order</h2>
+            <div id="receiptContent"></div>
+            <div class="text-center mt-4">
+              <button id="printButton" class="btn btn-primary no-print">Print Receipt</button>
+              <a href="/src/index.html" class="btn btn-secondary no-print ms-2">Back to Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white text-black text-center py-3 cursor-pointer no-print">
+    <div class="container">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      </div>
+      <p class="mb-0">&copy; 2024 Hayat Market All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/components/receipt.js"></script>
+  <script src="/components/cart.js"></script>
+</body>
+
+</html>

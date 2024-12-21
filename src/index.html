@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping-cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    .price-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff5722;
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 5px;
+      border: 1px solid white;
+      overflow: hidden;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .btn-custom {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 5px 15px;
+    }
+
+    .btn-custom:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-primary ">
+          <div class="container justify-content-center">
+            <div>
+              <a href="index.html""><img src=" /img/ADEEG LOGO.avif" alt="" style="width: 200px;"></a>
+            </div>
+          </div>
+        </nav>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-dark">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-cart"></i> My Cart <span id="cartItemCount" class="badge bg-primary">0</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown"
+                style="width: 400px; font-family: sans-serif;">
+                <li>
+                  <h6 class="dropdown-header">Adeeg.com </h6>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <ul id="cartDropdownItems" class="list-unstyled mb-0"
+                    style="max-height: 200px; font-family: sans-serif; overflow-y: auto;">
+                  </ul>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <p class="dropdown-item-text fw-bold">Total: $<span id="cartDropdownTotal">0.00</span></p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class=" text-slate text-center py-5">
+      <div class="container">
+        <h2 class="display-4">Welcome to Your Shopping Cart</h2>
+        <p class="lead">Review your selected items and proceed to checkout</p>
+      </div>
+    </section>
+
+    <!-- Mobiles And Accessories section -->
+    <section>
+      <div class="container mt-5">
+        <h4 class="text-left mb-4" style="text-transform: uppercase; font-weight: bold;">Mobiles And Accessories</h4>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/samsung s24.webp" class="card-img-top" alt="Samsung Galaxy S24 Ultra">
+              <div class="price-tag">$1050.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/iphone15 pro max.webp" class="card-img-top" alt="Iphone15 pro max">
+              <div class="price-tag">$1200.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Iphone15 pro max 256GB Platinium</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/iphone 3 pin 50w power adapter.webp" class="card-img-top"
+                alt="iphone 3 pin 50w power adapter">
+              <div class="price-tag">$13.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Iphone 3 pin 50w Power Adapter</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/redminote_720x.webp" class="card-img-top" alt="Samsung Galaxy S24 Ultra">
+              <div class="price-tag">$275.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Redmi Note 12pro 5G 8GB RAM 256GB</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TV, Video & Sound System section -->
+
+    <section>
+      <div class="container mt-5">
+        <h4 class="text-left mb-4" style="text-transform: uppercase; font-weight: bold;">TV, Video & Sound System</h4>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/lg.webp" class="card-img-top"
+                alt="LG TV 75 inch UQ80006LG.AFKE Cinema Screen Design ThinQ">
+              <div class="price-tag">$1310.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">LG TV 75 inch UQ80006LG.AFKE </h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Haino Teko S57 Wireless Speaker.webp" class="card-img-top"
+                alt="Haino Teko S57 Wireless Speaker">
+              <div class="price-tag">$25.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Haino Teko S57 Wireless Speaker</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/lg nano cell tv.webp" class="card-img-top" alt="lg nano cell tv">
+              <div class="price-tag">$880.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Lg Nano Cell Tv 55Nano80Vna Smart Tv</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/GMS8568 - Port&Rech.webp" class="card-img-top"
+                alt="GMS8568 - Port&Rech Prof Spki/Usb/Sa/Fm/Mic/B">
+              <div class="price-tag">$110.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">GMS8568 - Port&Rech Prof </h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Men Garments & Accessories section -->
+
+    <section>
+      <div class="container mt-5">
+        <h4 class="text-left mb-4" style="text-transform: uppercase; font-weight: bold;">Men Garments & Accessories</h4>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/The oxford gant shirt.webp" class="card-img-top" alt="The oxford gant shirt">
+              <div class="price-tag">$100.00</div>
+              <div class="card-body">
+                <h5 class="card-title">The oxford gant shirt</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Macwiis Bhs Excellent.webp" class="Macwiis Bhs Excellent"
+                alt="Haino Teko S57 Wireless Speaker">
+              <div class="price-tag">$75.00</div>
+              <div class="card-body">
+                <h5 class="card-title">Macwiis Bhs Excellent</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/JackwinmenJeans2.jpg" class="card-img-top" alt="Jackwin men Jeans 2">
+              <div class="price-tag">$25.00</div>
+              <div class="card-body">
+                <h5 class="card-title">Jackwin men Jeans 2</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Men Thobes Arabian Qamiis.webp" class="Men Thobes Arabian Qamiis"
+                alt="GMS8568 - Port&Rech Prof Spki/Usb/Sa/Fm/Mic/B">
+              <div class="price-tag">$35.00</div>
+              <div class="card-body">
+                <h5 class="card-title">Men Thobes Arabian</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Desserts, Dates, Fruits section -->
+    <section>
+      <div class="container mt-5">
+        <h4 class="text-left mb-4" style="text-transform: uppercase; font-weight: bold;">Desserts, Dates, Fruits</h4>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Tufaax Cagaaran.webp" class="card-img-top" alt="Tufaax Cagaaran">
+              <div class="price-tag">$0.35 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Tufaax Cagaaran</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Bayara Mixed Nuts 150G.webp" class="Bayara Mixed Nuts 150G"
+                alt="Haino Teko S57 Wireless Speaker">
+              <div class="price-tag">$2.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Bayara Mixed Nuts 150G</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Ajwa Dates 1Kg.webp" class="card-img-top" alt="Ajwa Dates 1Kg">
+              <div class="price-tag">$14.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Ajwa Dates 1Kg</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card  h-100">
+              <img src="/img/Bayara Chia Seeds 400g.webp" class="Bayara Chia Seeds 400g"
+                alt="GMS8568 - Port&Rech Prof Spki/Usb/Sa/Fm/Mic/B">
+              <div class="price-tag">$3.00 <i class="fa-solid fa-tag"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Bayara Chia Seeds 400g</h5>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white text-black text-center py-3 cursor-pointer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      </div>
+      <p class="mb-0">&copy; 2024 Hayat Market All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/components/cart.js"></script>
+
+</body>
+
+</html>
